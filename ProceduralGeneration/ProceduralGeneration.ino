@@ -155,7 +155,7 @@ void SimulateStep(){
 
 void GenerateMap(){
   srand(millis());
-  seed = rand();
+  seed = millis();
   for(int i = 0; i < mW; i++){
     for(int j = 0; j < mH; j++){
       if(((rand() % 100) + 1) < (iChance * 100)){
@@ -277,11 +277,11 @@ void SeedViewer(){
   display.clearDisplay();
   display.setCursor(45,0);
   display.println("Seed");
-  display.setCursor(10,25);
+  display.setCursor(18,25);
   display.setTextSize(1);
   display.print(seed);
   display.print(".");
-  display.print(iChance*100);
+  display.print(int(iChance*100));
   display.print(".");
   display.print(bLimit);
   display.print(".");
